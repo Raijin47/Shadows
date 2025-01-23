@@ -15,6 +15,7 @@ public class RotateViaDrag : MonoBehaviour
     {
         _onPause = true;
         Game.Action.OnPause += OnPause;
+        Game.Action.OnExit += () => _onPause = true;
     }
 
     private void OnPause(bool pause) => _onPause = pause;

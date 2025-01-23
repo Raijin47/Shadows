@@ -14,6 +14,7 @@ public class PageMenu : PanelBase
             Join(_components[3].DOLocalMoveY(-200, _delay)).
             Join(_components[4].DOLocalMoveX(-200, _delay)).
             Join(_components[5].DOLocalMoveX(-200, _delay)).
+            Join(_components[6].DOScale(0, _delay)).
             Join(_menu.DOLocalMoveX(-30, _delay));
     }
 
@@ -28,6 +29,7 @@ public class PageMenu : PanelBase
             Join(_components[3].DOLocalMoveY(0, _delay)).
             Join(_components[4].DOLocalMoveX(0, _delay)).
             Join(_components[5].DOLocalMoveX(0, _delay)).
+            Join(_components[6].DOScale(1, _delay)).
             Join(_menu.DOLocalMoveX(0, _delay).From(30)).
 
             OnComplete(OnShowComplated);

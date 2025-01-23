@@ -57,10 +57,4 @@ public class Game : MonoBehaviour
     public void OnNext() => Action.SendNext();
     public void AddMoney(int value) => Wallet.Add(value);
     public void SaveProgress() => SaveService.SaveProgress();
-
-    public void Back()
-    {
-        SaveProgress();
-        SceneManager.LoadScene(0);
-    }
 }

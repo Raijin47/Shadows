@@ -13,11 +13,7 @@ public class Timer : MonoBehaviour
     private float _currentTime;
     private bool _isActive;
 
-#if UNITY_EDITOR
-    private readonly float RequireTime = 5f;
-#else
     private readonly float RequireTime = 90f;
-#endif
 
     private Sequence _sequence;
 
@@ -37,9 +33,8 @@ public class Timer : MonoBehaviour
         Game.Action.OnStart += StartTimer;
         Game.Action.OnPause += OnPause;
         Game.Action.OnNext += ResetTimer;
-        Game.Action.OnExit += ResetTimer;
         Game.Action.OnRestart += ResetTimer;
-        
+        Game.Action.OnExit += ResetTimer;
         CurrentTime = RequireTime;
     }
 
@@ -86,7 +81,7 @@ public class Timer : MonoBehaviour
 
         _sequence = DOTween.Sequence();
 
-        _sequence.
+        _sequence.SetDelay(2f).
             Append(_addTimerText.transform.DOScaleY(1f, 3f).From(0).SetEase(Ease.InOutBack)).
             Append(_addTimerText.transform.DOScaleY(0, 2f).From(0));
     }

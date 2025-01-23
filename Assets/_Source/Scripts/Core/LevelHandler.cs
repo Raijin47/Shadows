@@ -88,7 +88,6 @@ public class LevelHandler : MonoBehaviour
         _sequence.
             Append(_object.DOScale(0, Duration).From(1)).
             Join(_target.DOScale(0, Duration).From(1).OnComplete(Game.Locator.Panel.Enter));
-
     }
 
     public void NextStage()
